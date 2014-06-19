@@ -74,7 +74,7 @@ func nextConfig() *agent.Config {
 
 	conf.Bootstrap = true
 	conf.Datacenter = "dc1"
-	conf.NodeName = fmt.Sprintf("Node %d", idx)
+	conf.NodeName = fmt.Sprintf("node%d", idx)
 	conf.BindAddr = "127.0.0.1"
 	conf.Server = true
 

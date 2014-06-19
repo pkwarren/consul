@@ -77,7 +77,7 @@ func testServerDC(t *testing.T, dc string) (string, *Server) {
 }
 
 func testServerDCBootstrap(t *testing.T, dc string, bootstrap bool) (string, *Server) {
-	name := fmt.Sprintf("Node %d", getPort())
+	name := fmt.Sprintf("node%d", getPort())
 	dir, config := testServerConfig(t, name)
 	config.Datacenter = dc
 	config.Bootstrap = bootstrap
@@ -89,7 +89,7 @@ func testServerDCBootstrap(t *testing.T, dc string, bootstrap bool) (string, *Se
 }
 
 func testServerDCExpect(t *testing.T, dc string, expect int) (string, *Server) {
-	name := fmt.Sprintf("Node %d", getPort())
+	name := fmt.Sprintf("node%d", getPort())
 	dir, config := testServerConfig(t, name)
 	config.Datacenter = dc
 	config.Bootstrap = false

@@ -363,7 +363,11 @@ func (s *StateStore) EnsureNode(index uint64, node structs.Node) error {
 
 	// Create the entry
 	entry := structs.Node{
+<<<<<<< HEAD
+		Node:    strings.ToLower(node.Node),
+=======
 		Node: strings.ToLower(node.Node),
+>>>>>>> FETCH_HEAD
 		Address: node.Address,
 	}
 
