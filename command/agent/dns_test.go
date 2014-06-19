@@ -233,7 +233,7 @@ func TestDNS_NodeLookup_CNAME(t *testing.T) {
 	// Register node
 	args := &structs.RegisterRequest{
 		Datacenter: "dc1",
-		Node:       "google",
+		Node:       "Google",
 		Address:    "www.google.com",
 	}
 
@@ -243,7 +243,7 @@ func TestDNS_NodeLookup_CNAME(t *testing.T) {
 	}
 
 	m := new(dns.Msg)
-	m.SetQuestion("google.node.consul.", dns.TypeANY)
+	m.SetQuestion("gOOgle.node.consul.", dns.TypeANY)
 
 	c := new(dns.Client)
 	addr, _ := srv.agent.config.ClientListener(srv.agent.config.Ports.DNS)
