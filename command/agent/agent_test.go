@@ -21,7 +21,7 @@ func nextConfig() *Config {
 	conf.AdvertiseAddr = "127.0.0.1"
 	conf.Bootstrap = true
 	conf.Datacenter = "dc1"
-	conf.NodeName = fmt.Sprintf("node%d", idx)
+	conf.NodeName = fmt.Sprintf("node %d", idx)
 	conf.BindAddr = "127.0.0.1"
 	conf.Ports.DNS = 18600 + idx
 	conf.Ports.HTTP = 18500 + idx
