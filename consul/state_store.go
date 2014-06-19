@@ -361,7 +361,13 @@ func (s *StateStore) EnsureNode(index uint64, node structs.Node) error {
 	}
 	defer tx.Abort()
 
-	if err := s.nodeTable.InsertTxn(tx, node); err != nil {
+	// Create the entry
+	entry := structs.Node{
+		Node: strings.ToLower(node.Node),
+		Address: node.Address,
+	}
+
+	if err := s.nodeTable.InsertTxn(tx, &entry); err != nil {
 		return err
 	}
 	if err := s.nodeTable.SetLastIndexTxn(tx, index); err != nil {
