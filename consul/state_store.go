@@ -425,7 +425,7 @@ func (s *StateStore) EnsureService(index uint64, node string, ns *structs.NodeSe
 	entry := structs.ServiceNode{
 		Node:        node,
 		ServiceID:   ns.ID,
-		ServiceName: ns.Service,
+		ServiceName: strings.ToLower(ns.Service),
 		ServiceTags: ns.Tags,
 		ServicePort: ns.Port,
 	}

@@ -243,7 +243,7 @@ func TestDNS_NodeLookup_CNAME(t *testing.T) {
 	}
 
 	m := new(dns.Msg)
-	m.SetQuestion("gOOgle.node.consul.", dns.TypeANY)
+	m.SetQuestion("GOOGLE.node.consul.", dns.TypeANY)
 
 	c := new(dns.Client)
 	addr, _ := srv.agent.config.ClientListener(srv.agent.config.Ports.DNS)
@@ -282,7 +282,7 @@ func TestDNS_ServiceLookup(t *testing.T) {
 		Node:       "foo",
 		Address:    "127.0.0.1",
 		Service: &structs.NodeService{
-			Service: "db",
+			Service: "Database",
 			Tags:    []string{"master"},
 			Port:    12345,
 		},
@@ -294,7 +294,7 @@ func TestDNS_ServiceLookup(t *testing.T) {
 	}
 
 	m := new(dns.Msg)
-	m.SetQuestion("db.service.consul.", dns.TypeSRV)
+	m.SetQuestion("DATABASE.service.consul.", dns.TypeSRV)
 
 	c := new(dns.Client)
 	addr, _ := srv.agent.config.ClientListener(srv.agent.config.Ports.DNS)
